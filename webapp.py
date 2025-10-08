@@ -20,14 +20,12 @@ def render_page1():
 @app.route("/response")
 def render_response():
     dogcat = request.args['dogcat']
-    if dogcat.lower() == 'dog':
+    if dogcat.lower() == 'dogs':
         responses = ["Husky", "GoldenRetriever", "Beagle", "Bulldog", "Poodle", "Corgi", "Affenpinscher", "Rottweiler", "Chihuahua"]
         reply1 = random.choice(responses)
-    if dogcat.lower() == 'cat':
+    if dogcat.lower() == 'cats':
         responses = ["ExoticShortHair", "RussianBlue", "AmericanWireHair", "Birman", "MaineCoon", "Ragdoll", "Ragamuffin", "SelkirkRex"]
         reply1 = random.choice(responses)
-    else:
-        reply1 = "put dog or cat not dogs or cats."
     n = int(request.args['multNum'])
     reply2 = str((2*n))
     return render_template('response.html', response1 = reply1 + reply2 )
