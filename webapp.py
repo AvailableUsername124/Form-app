@@ -23,9 +23,13 @@ def render_response():
     if dogcat.lower() == 'dogs':
         responses = ["Husky", "GoldenRetriever", "Beagle", "Bulldog", "Poodle", "Corgi", "Affenpinscher", "Rottweiler", "Chihuahua"]
         reply1 = random.choice(responses)
-    if dogcat.lower() == 'cats':
+    elif dogcat.lower() == 'cats':
         responses = ["ExoticShortHair", "RussianBlue", "AmericanWireHair", "Birman", "MaineCoon", "Ragdoll", "Ragamuffin", "SelkirkRex"]
         reply1 = random.choice(responses)
+    else:
+        reply1 = "only enter cats or dogs"
+        return render_template('response.html', response1=reply1)
+    
     n = int(request.args['multNum'])
     reply2 = str((2*n))
     return render_template('response.html', response1 = reply1 + reply2 )
