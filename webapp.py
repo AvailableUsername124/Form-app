@@ -35,4 +35,4 @@ def render_response():
     return render_template('response.html', response1 = reply1 + reply2 )
     
 if __name__=="__main__":
-    app.run(debug=False)
+    app.run(debug=True)
